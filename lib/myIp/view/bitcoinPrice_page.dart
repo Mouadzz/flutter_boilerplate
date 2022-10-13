@@ -46,12 +46,14 @@ class _MyIpViewState extends State<MyIpView> {
         listener: (context, state) {
           setState(() {
             isDataLoading = (state is MyIpLoading);
-            if (state is MyIpError) {
-              log(state.errorMsg);
-            } else if (state is MyIpLoaded) {
-              myIp = state.data.ip ?? "";
-            }
           });
+          if (state is MyIpError) {
+            log(state.errorMsg);
+          } else if (state is MyIpLoaded) {
+            setState(() {
+              myIp = state.data.ip ?? "";
+            });
+          }
         },
         child: Center(
             child: isDataLoading
