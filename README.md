@@ -113,4 +113,6 @@ Update the `CFBundleLocalizations` array in the `Info.plist` at `ios/Runner/Info
 
 ### Change App Package Name
 
-flutter pub run change_app_package_name:main com.new.package.name
+```sh
+$ flutter pub run change_app_package_name:main com.new.package.name
+```
